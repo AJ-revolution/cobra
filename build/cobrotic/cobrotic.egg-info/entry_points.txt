@@ -1,0 +1,5 @@
+[console_scripts]
+moveit2_to_arduino = scripts.moveit2_to_arduino:main
+pose_recorder = scripts.pose_recorder:main
+ros2_to_arduino = scripts.ros2_to_arduino:main
+

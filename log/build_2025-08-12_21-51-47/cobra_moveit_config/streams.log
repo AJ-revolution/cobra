@@ -1,0 +1,78 @@
+[1.847s] Invoking command in '/home/aj/ros2_ws/build/cobra_moveit_config': AMENT_PREFIX_PATH=/home/aj/ros2_ws/install/cobrotic:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble PYTHONPATH=/home/aj/ros2_ws/install/cobrotic/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /home/aj/ros2_ws/src/cobra_moveit_config -DCMAKE_INSTALL_PREFIX=/home/aj/ros2_ws/install/cobra_moveit_config
+[3.320s] -- The C compiler identification is GNU 11.4.0
+[11.133s] -- The CXX compiler identification is GNU 11.4.0
+[16.742s] -- Detecting C compiler ABI info
+[17.605s] -- Detecting C compiler ABI info - done
+[17.611s] -- Check for working C compiler: /usr/bin/cc - skipped
+[17.612s] -- Detecting C compile features
+[17.613s] -- Detecting C compile features - done
+[17.616s] -- Detecting CXX compiler ABI info
+[17.794s] -- Detecting CXX compiler ABI info - done
+[17.799s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[17.799s] -- Detecting CXX compile features
+[17.799s] -- Detecting CXX compile features - done
+[17.810s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[17.912s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[18.029s] -- Configuring done
+[18.031s] -- Generating done
+[18.032s] -- Build files have been written to: /home/aj/ros2_ws/build/cobra_moveit_config
+[18.035s] Invoked command in '/home/aj/ros2_ws/build/cobra_moveit_config' returned '0': AMENT_PREFIX_PATH=/home/aj/ros2_ws/install/cobrotic:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble PYTHONPATH=/home/aj/ros2_ws/install/cobrotic/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /home/aj/ros2_ws/src/cobra_moveit_config -DCMAKE_INSTALL_PREFIX=/home/aj/ros2_ws/install/cobra_moveit_config
+[18.037s] Invoking command in '/home/aj/ros2_ws/build/cobra_moveit_config': AMENT_PREFIX_PATH=/home/aj/ros2_ws/install/cobrotic:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble PYTHONPATH=/home/aj/ros2_ws/install/cobrotic/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/aj/ros2_ws/build/cobra_moveit_config -- -j16 -l16
+[18.059s] Invoked command in '/home/aj/ros2_ws/build/cobra_moveit_config' returned '0': AMENT_PREFIX_PATH=/home/aj/ros2_ws/install/cobrotic:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble PYTHONPATH=/home/aj/ros2_ws/install/cobrotic/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/aj/ros2_ws/build/cobra_moveit_config -- -j16 -l16
+[18.066s] Invoking command in '/home/aj/ros2_ws/build/cobra_moveit_config': AMENT_PREFIX_PATH=/home/aj/ros2_ws/install/cobrotic:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble PYTHONPATH=/home/aj/ros2_ws/install/cobrotic/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/aj/ros2_ws/build/cobra_moveit_config
+[18.070s] -- Install configuration: ""
+[18.070s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/ament_index/resource_index/package_run_dependencies/cobra_moveit_config
+[18.071s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/ament_index/resource_index/parent_prefix_path/cobra_moveit_config
+[18.071s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/environment/ament_prefix_path.sh
+[18.071s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/environment/ament_prefix_path.dsv
+[18.071s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/environment/path.sh
+[18.071s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/environment/path.dsv
+[18.071s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/local_setup.bash
+[18.072s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/local_setup.sh
+[18.072s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/local_setup.zsh
+[18.072s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/local_setup.dsv
+[18.072s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/package.dsv
+[18.072s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/ament_index/resource_index/packages/cobra_moveit_config
+[18.072s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/cmake/cobra_moveit_configConfig.cmake
+[18.072s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/cmake/cobra_moveit_configConfig-version.cmake
+[18.073s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/package.xml
+[18.073s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch
+[18.073s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/move_group.launch.py
+[18.073s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/warehouse_db.launch.py
+[18.074s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/move_group.launch.py:Zone.Identifier
+[18.074s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/setup_assistant.launch.py:Zone.Identifier
+[18.074s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/moveit_rviz.launch.py:Zone.Identifier
+[18.074s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/warehouse_db.launch.py:Zone.Identifier
+[18.074s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/rsp.launch.py
+[18.074s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/moveit_rviz.launch.py
+[18.075s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/spawn_controllers.launch.py
+[18.075s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/spawn_controllers.launch.py:Zone.Identifier
+[18.075s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/setup_assistant.launch.py
+[18.075s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/static_virtual_joint_tfs.launch.py
+[18.076s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/rsp.launch.py:Zone.Identifier
+[18.076s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/demo.launch.py
+[18.076s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/static_virtual_joint_tfs.launch.py:Zone.Identifier
+[18.076s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/launch/demo.launch.py:Zone.Identifier
+[18.076s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config
+[18.077s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/joint_limits.yaml
+[18.077s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/cobra.ros2_control.xacro
+[18.077s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/kinematics.yaml
+[18.077s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/ros2_controllers.yaml
+[18.077s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/ros2_controllers.yaml:Zone.Identifier
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/cobra.srdf
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/cobra.urdf.xacro:Zone.Identifier
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/moveit.rviz:Zone.Identifier
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/cobra.urdf.xacro
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/moveit.rviz
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/initial_positions.yaml:Zone.Identifier
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/cobra.srdf:Zone.Identifier
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/initial_positions.yaml
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/joint_limits.yaml:Zone.Identifier
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/pilz_cartesian_limits.yaml:Zone.Identifier
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/cobra.ros2_control.xacro:Zone.Identifier
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/moveit_controllers.yaml:Zone.Identifier
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/moveit_controllers.yaml
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/kinematics.yaml:Zone.Identifier
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/config/pilz_cartesian_limits.yaml
+[18.078s] -- Installing: /home/aj/ros2_ws/install/cobra_moveit_config/share/cobra_moveit_config/.setup_assistant
+[18.080s] Invoked command in '/home/aj/ros2_ws/build/cobra_moveit_config' returned '0': AMENT_PREFIX_PATH=/home/aj/ros2_ws/install/cobrotic:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/humble PYTHONPATH=/home/aj/ros2_ws/install/cobrotic/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/aj/ros2_ws/build/cobra_moveit_config

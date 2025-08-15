@@ -1,0 +1,6 @@
+[0.000000] (-) TimerEvent: {}
+[0.000129] (-) JobUnselected: {'identifier': 'cobrotic'}
+[0.000150] (cobra_moveit_config) JobQueued: {'identifier': 'cobra_moveit_config', 'dependencies': OrderedDict([('cobrotic', '/home/aj/ros2_ws/install/cobrotic')])}
+[0.000163] (cobra_moveit_config) JobStarted: {'identifier': 'cobra_moveit_config'}
+[0.014019] (cobra_moveit_config) JobEnded: {'identifier': 'cobra_moveit_config', 'rc': 1}
+[0.024542] (-) EventReactorShutdown: {}

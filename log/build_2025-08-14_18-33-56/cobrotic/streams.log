@@ -1,0 +1,19 @@
+[0.358s] Invoking command in '/home/aj/ros2_ws/src/cobrotic': PYTHONPATH=/home/aj/ros2_ws/build/cobrotic/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aj/ros2_ws/install/cobrotic/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/cobrotic build --build-base /home/aj/ros2_ws/build/cobrotic/build install --record /home/aj/ros2_ws/build/cobrotic/install.log --single-version-externally-managed install_data
+[0.485s] running egg_info
+[0.485s] writing ../../build/cobrotic/cobrotic.egg-info/PKG-INFO
+[0.486s] writing dependency_links to ../../build/cobrotic/cobrotic.egg-info/dependency_links.txt
+[0.486s] writing entry points to ../../build/cobrotic/cobrotic.egg-info/entry_points.txt
+[0.486s] writing requirements to ../../build/cobrotic/cobrotic.egg-info/requires.txt
+[0.487s] writing top-level names to ../../build/cobrotic/cobrotic.egg-info/top_level.txt
+[0.488s] reading manifest file '../../build/cobrotic/cobrotic.egg-info/SOURCES.txt'
+[0.489s] writing manifest file '../../build/cobrotic/cobrotic.egg-info/SOURCES.txt'
+[0.489s] running build
+[0.489s] running install
+[0.489s] running install_data
+[0.490s] running install_egg_info
+[0.493s] removing '/home/aj/ros2_ws/install/cobrotic/lib/python3.10/site-packages/cobrotic-0.0.0-py3.10.egg-info' (and everything under it)
+[0.494s] Copying ../../build/cobrotic/cobrotic.egg-info to /home/aj/ros2_ws/install/cobrotic/lib/python3.10/site-packages/cobrotic-0.0.0-py3.10.egg-info
+[0.494s] running install_scripts
+[0.507s] Installing ros2_to_arduino_node script to /home/aj/ros2_ws/install/cobrotic/lib/cobrotic
+[0.507s] writing list of installed files to '/home/aj/ros2_ws/build/cobrotic/install.log'
+[0.531s] Invoked command in '/home/aj/ros2_ws/src/cobrotic' returned '0': PYTHONPATH=/home/aj/ros2_ws/build/cobrotic/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aj/ros2_ws/install/cobrotic/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/cobrotic build --build-base /home/aj/ros2_ws/build/cobrotic/build install --record /home/aj/ros2_ws/build/cobrotic/install.log --single-version-externally-managed install_data
