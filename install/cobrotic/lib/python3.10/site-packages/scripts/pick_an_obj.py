@@ -1,41 +1,54 @@
-import rclpy
-import yaml
 import os
-from geometry_msgs.msg import Pose
-from moveit_commander import MoveGroupCommander, roscpp_initialize
+import sqlite3
+import yaml
 
-def load_yaml(file_path):
-    with open(file_path, 'r') as f:
-        return yaml.safe_load(f)
+def generate_bag_info(db_path, topic='/joint_states', output_yaml='rosbag2_bagfile_information.yaml'):
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
 
-def main():
-    rclpy.init()
-    roscpp_initialize([])
+    # Get topic metadata
+    cursor.execute("SELECT id, type, serialization_format FROM topics WHERE name=?", (topic,))
+    topic_row = cursor.fetchone()
+    if topic_row is None:
+        raise ValueError(f"Topic {topic} not found in {db_path}")
+    topic_id, topic_type, serialization_format = topic_row
 
-    arm = MoveGroupCommander('manipulator')
+    # Get message count and timestamps
+    cursor.execute("SELECT COUNT(*), MIN(timestamp), MAX(timestamp) FROM messages WHERE topic_id=?", (topic_id,))
+    count, start_ts, end_ts = cursor.fetchone()
+    duration_ns = end_ts - start_ts
 
-    # Load configs
-    waypoints_file = os.path.join(os.path.dirname(__file__), 'waypoints.yaml')
-    velocity_file = os.path.join(os.path.dirname(__file__), 'velocity_config.yaml')
+    # Build YAML structure
+    bag_info = {
+        'rosbag2_bagfile_information': {
+            'version': 5,
+            'storage_identifier': 'sqlite3',
+            'duration': {'nanoseconds': duration_ns},
+            'starting_time': {'nanoseconds_since_epoch': start_ts},
+            'message_count': count,
+            'topics_with_message_count': [{
+                'topic_metadata': {
+                    'name': topic,
+                    'type': topic_type,
+                    'serialization_format': serialization_format,
+                    'offered_qos_profiles': "- history: 3\n  depth: 0\n  reliability: 1\n  durability: 1\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+                },
+                'message_count': count
+            }],
+            'compression_format': '',
+            'compression_mode': '',
+            'relative_file_paths': [os.path.basename(db_path)],
+            'files': [{
+                'path': os.path.basename(db_path),
+                'starting_time': {'nanoseconds_since_epoch': start_ts},
+                'duration': {'nanoseconds': duration_ns},
+                'message_count': count
+            }]
+        }
+    }
 
-    waypoints_data = load_yaml(waypoints_file)
-    velocity_data = load_yaml(velocity_file)
+    # Write to YAML
+    with open(output_yaml, 'w') as f:
+        yaml.dump(bag_info, f, sort_keys=False)
 
-    arm.set_max_velocity_scaling_factor(velocity_data.get('velocity_scaling', 0.2))
-    arm.set_max_acceleration_scaling_factor(velocity_data.get('acceleration_scaling', 0.1))
-
-    for wp in waypoints_data['waypoints']:
-        pose = Pose()
-        pose.position.x, pose.position.y, pose.position.z = wp['position']
-        pose.orientation.x, pose.orientation.y, pose.orientation.z, pose.orientation.w = wp['orientation']
-
-        arm.set_pose_target(pose)
-        arm.go(wait=True)
-
-    arm.stop()
-    arm.clear_pose_targets()
-
-    rclpy.shutdown()
-
-if __name__ == '__main__':
-    main()
+    print(f"✅ Metadata written to {output_yaml}")

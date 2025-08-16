@@ -3,6 +3,7 @@ import sqlite3
 import yaml
 from rclpy.serialization import serialize_message, deserialize_message
 from sensor_msgs.msg import JointState
+import re
 
 # ------------------------
 # CONFIGURATION
@@ -11,7 +12,7 @@ base_dir = 'myRecord'             # Root folder containing bag subfolders
 topic = '/joint_states'
 output_folder = 'merged_bag'
 output_db = 'merged.db3'
-output_yaml = 'rosbag2_bagfile_information.yaml'
+output_yaml = 'metadata.yaml'
 
 # ------------------------
 # HELPER FUNCTIONS
@@ -87,12 +88,19 @@ def generate_bag_info(db_path, topic, start_ts, end_ts, count, output_yaml):
         yaml.dump(bag_info, f, sort_keys=False)
     print(f"📄 Metadata written to {output_yaml}")
 
+def numerical_sort_key(path):
+    folder_name = os.path.basename(path)
+    numbers = re.findall(r'\d+', folder_name)
+    return int(numbers[0]) if numbers else float('inf')  # fallback for non-numeric names
+
 # ------------------------
 # MAIN MERGE FUNCTION
 # ------------------------
 def merge_all_bags(base_dir, topic):
     all_messages = []
-    folders = sorted([os.path.join(base_dir, f) for f in os.listdir(base_dir) if os.path.isdir(os.path.join(base_dir, f))])
+    folders = sorted(
+    [os.path.join(base_dir, f) for f in os.listdir(base_dir) if os.path.isdir(os.path.join(base_dir, f))],
+    key=numerical_sort_key)
     for folder in folders:
         try:
             db3_file = find_db3_file(folder)
