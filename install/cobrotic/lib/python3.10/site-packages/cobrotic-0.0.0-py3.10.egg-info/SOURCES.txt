@@ -8,13 +8,12 @@ setup.py
 ../../build/cobrotic/cobrotic.egg-info/requires.txt
 ../../build/cobrotic/cobrotic.egg-info/top_level.txt
 ../../build/cobrotic/cobrotic.egg-info/zip-safe
+cobrotic_scripts/__init__.py
+cobrotic_scripts/moveit2_to_arduino.py
+cobrotic_scripts/one_motion_to_arduino.py
+cobrotic_scripts/replay_bag_trajectory.py
 launch/display.launch.py
 launch/initiate.launch.py
 resource/cobrotic
-scripts/__init__.py
-scripts/moveit2_to_arduino.py
-scripts/pick_an_obj.py
-scripts/replay_bag_trajectory.py
-scripts/ros2_to_arduino.py
 urdf/cobra.rviz
 urdf/cobra.urdf

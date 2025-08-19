@@ -25,9 +25,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'moveit2_to_arduino = scripts.moveit2_to_arduino:main',
-            'ros2_to_arduino = scripts.ros2_to_arduino:main',
-            'pose_recorder = scripts.pose_recorder:main',
+            'moveit2_to_arduino = cobrotic_scripts.moveit2_to_arduino:main',
+            'one_motion_to_arduino = cobrotic_scripts.one_motion_to_arduino:main',
         ],
     },
 )

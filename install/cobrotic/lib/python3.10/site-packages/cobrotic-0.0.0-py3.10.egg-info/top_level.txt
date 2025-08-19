@@ -1,1 +1,1 @@
-scripts
+cobrotic_scripts
