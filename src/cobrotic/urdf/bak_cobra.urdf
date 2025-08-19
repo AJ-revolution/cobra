@@ -20,7 +20,7 @@
 
   <joint name="bottom_to_pedestal" type="revolute">
     <axis xyz="0 0 1"/>
-    <limit effort="1000.0" lower="0.00" upper="3.66519143" velocity="1.0"/>
+    <limit effort="1000.0" lower="0.00" upper="3.14" velocity="1.0"/>
     <parent link="bottom"/>
     <child link="pedestal"/>
     <origin xyz="0 0 0.25"/>
@@ -54,7 +54,7 @@
 
   <joint name="arm_to_forearm" type="revolute">
     <axis xyz="0 -1 0"/>
-    <limit effort="1000.0" lower="0" upper="3.14" velocity="1.0"/>
+    <limit effort="1000.0" lower="0" upper="2.70526034" velocity="1.0"/>
     <parent link="arm"/>
     <child link="forearm"/>
     <origin rpy="0 2.70526034 0" xyz="0 0 1.2"/>
@@ -88,7 +88,7 @@
     <visual>
       <origin rpy="3.1415 -1.57 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cobrotic/meshes/l_finger.dae"/>
+        <mesh filename="package://cobrotic/urdf/l_finger.dae"/>
       </geometry>
     </visual>
   </link>
@@ -103,7 +103,7 @@
     <visual>
       <origin rpy="3.1415 -1.57 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cobrotic/meshes/l_finger_tip.dae"/>
+        <mesh filename="package://cobrotic/urdf/l_finger_tip.dae"/>
       </geometry>
     </visual>
   </link>
@@ -120,7 +120,7 @@
     <visual>
       <origin rpy="0 -1.57 3.1415" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cobrotic/meshes/l_finger.dae"/>
+        <mesh filename="package://cobrotic/urdf/l_finger.dae"/>
       </geometry>
     </visual>
   </link>
@@ -135,7 +135,7 @@
     <visual>
       <origin rpy="0 -1.57 3.1415" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cobrotic/meshes/l_finger_tip.dae"/>
+        <mesh filename="package://cobrotic/urdf/l_finger_tip.dae"/>
       </geometry>
     </visual>
   </link>

@@ -1,4 +1,4 @@
 [console_scripts]
-moveit2_to_arduino = cobrotic_scripts.moveit2_to_arduino:main
-one_motion_to_arduino = cobrotic_scripts.one_motion_to_arduino:main
+moveit2_to_arduino = cobrotic_nodes.moveit2_to_arduino:main
+one_motion_to_arduino = cobrotic_nodes.one_motion_to_arduino:main
 

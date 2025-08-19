@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<robot name="cobra_arm">
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.2 0.2 0.05"/>
+      </geometry>
+      <material name="gray">
+        <ambient>0.7 0.7 0.7 1</ambient>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.2 0.2 0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="2.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" iyy="0.01" izz="0.01" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <!-- Pedestal -->
+  <link name="pedestal">
+    <visual>
+      <geometry><cylinder radius="0.05" length="0.3"/></geometry>
+      <material name="blue">
+        <ambient>0 0 1 1</ambient>
+      </material>
+    </visual>
+    <collision>
+      <geometry><cylinder radius="0.05" length="0.3"/></geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+      <inertia ixx="0.005" iyy="0.005" izz="0.005" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <!-- Arm -->
+  <link name="arm">
+    <visual>
+      <geometry><box size="0.1 0.1 0.3"/></geometry>
+      <material name="green">
+        <ambient>0 1 0 1</ambient>
+      </material>
+    </visual>
+    <collision>
+      <geometry><box size="0.1 0.1 0.3"/></geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+      <inertia ixx="0.005" iyy="0.005" izz="0.005" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <!-- Forearm -->
+  <link name="forearm">
+    <visual>
+      <geometry><box size="0.08 0.08 0.25"/></geometry>
+      <material name="red">
+        <ambient>1 0 0 1</ambient>
+      </material>
+    </visual>
+    <collision>
+      <geometry><box size="0.08 0.08 0.25"/></geometry>
+    </collision>
+    <inertial>
+      <mass value="0.8"/>
+      <origin xyz="0 0 0.125" rpy="0 0 0"/>
+      <inertia ixx="0.004" iyy="0.004" izz="0.004" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <!-- Joints -->
+  <joint name="bottom_to_pedestal" type="revolute">
+    <parent link="base_link"/>
+    <child link="pedestal"/>
+    <origin xyz="0 0 0.025" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="1.0" lower="-3.14" upper="3.14"/>
+  </joint>
+
+  <joint name="pedestal_to_arm" type="revolute">
+    <parent link="pedestal"/>
+    <child link="arm"/>
+    <origin xyz="0 0 0.3" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="10" velocity="1.0" lower="-1.57" upper="1.57"/>
+  </joint>
+
+  <joint name="arm_to_forearm" type="revolute">
+    <parent link="arm"/>
+    <child link="forearm"/>
+    <origin xyz="0 0 0.3" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="5" velocity="1.0" lower="-1.57" upper="1.57"/>
+  </joint>
+
+  <!-- Left Gripper Finger -->
+  <link name="left_gripper_link">
+    <visual>
+      <geometry><box size="0.02 0.05 0.1"/></geometry>
+      <material name="yellow"><ambient>1 1 0 1</ambient></material>
+    </visual>
+    <collision>
+      <geometry><box size="0.02 0.05 0.1"/></geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0.05" rpy="0 0 0"/>
+      <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <!-- Right Gripper Finger -->
+  <link name="right_gripper_link">
+    <visual>
+      <geometry><box size="0.02 0.05 0.1"/></geometry>
+      <material name="yellow"><ambient>1 1 0 1</ambient></material>
+    </visual>
+    <collision>
+      <geometry><box size="0.02 0.05 0.1"/></geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0.05" rpy="0 0 0"/>
+      <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <!-- Arm to Left Finger -->
+  <joint name="left_gripper_joint" type="prismatic">
+    <parent link="forearm"/>
+    <child link="left_gripper_link"/>
+    <origin xyz="0 0.025 0.25" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1.0" velocity="0.05" lower="0.0" upper="0.03"/>
+  </joint>
+
+  <!-- Arm to Right Finger -->
+  <joint name="right_gripper_joint" type="prismatic">
+    <parent link="forearm"/>
+    <child link="right_gripper_link"/>
+    <origin xyz="0 -0.025 0.25" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="1.0" velocity="0.05" lower="0.0" upper="0.03"/>
+  </joint>
+
+</robot>
