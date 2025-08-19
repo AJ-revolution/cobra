@@ -1,6 +1,15 @@
 <?xml version="1.0"?>
 <robot name="cobra">
 
+  <!-- Mateirals -->
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+
+  <material name="yellow">
+    <color rgba="1 0.7 0 1"/>
+  </material>
+
   <!-- Base -->
   <link name="bottom">
     <visual>
@@ -8,8 +17,7 @@
       <geometry>
         <box size="0.8 0.8 0.3"/>
       </geometry>
-      <material name="gray">
-        <ambient>0.7 0.7 0.7 1</ambient>
+      <material name="blue">
       </material>
     </visual>
     <collision>
@@ -33,7 +41,6 @@
         <box size="0.6 0.5 0.65"/>
       </geometry>
       <material name="blue">
-        <ambient>0 0 1 1</ambient>
       </material>
     </visual>
     <collision>
@@ -64,8 +71,7 @@
       <geometry>
         <box size="0.4 0.5 1.6"/>
       </geometry>
-      <material name="green">
-        <ambient>0 1 0 1</ambient>
+      <material name="blue">
       </material>
     </visual>
     <collision>
@@ -82,6 +88,7 @@
   </link>
 
   <joint name="pedestal_to_arm" type="revolute">
+  
     <axis xyz="0 1 0"/>
     <limit effort="1000.0" lower="0" upper="2.18166157" velocity="1.0"/>  
     <parent link="pedestal"/>
@@ -96,8 +103,7 @@
       <geometry>
         <box size="0.4 0.5 1.25"/>
       </geometry>
-      <material name="red">
-        <ambient>1 0 0 1</ambient>
+      <material name="blue">
       </material>
     </visual>
     <collision>
@@ -128,8 +134,7 @@
       <geometry>
         <box size="0.03 0.5 0.5"/>
       </geometry>
-      <material name="gray">
-        <ambient>0.7 0.7 0.7 1</ambient>
+      <material name="blue">
       </material>
     </visual>
     <collision>
@@ -151,86 +156,19 @@
     <origin xyz="-0.2 0 0.6" rpy="0 0 0"/>
   </joint>
 
-  <!-- Gripper Left -->
-  <!-- <link name="left_gripper">
-    <visual>
-      <origin xyz="0 0 0" rpy="3.1415 -1.57 0"/>
-      <geometry>
-        <mesh filename="package://cobrotic/urdf/l_finger.dae"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <joint name="left_gripper_joint" type="revolute">
-    <axis xyz="1 0 0"/>
-    <limit effort="1000.0" lower="0" upper="0.523599" velocity="1.0"/>
-    <origin rpy="0 0 0" xyz="-0.1 -0.08 0.15"/>
-    <parent link="platform"/>
-    <child link="left_gripper"/>
-  </joint>
-
-  <link name="left_tip">
-    <visual>
-      <origin rpy="3.1415 -1.57 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://cobrotic/urdf/l_finger_tip.dae"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <joint name="left_tip_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.5"/>
-    <parent link="left_gripper"/>
-    <child link="left_tip"/>
-  </joint> -->
-
-  <!-- Gripper Right -->
-  <!-- <link name="right_gripper">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 -1.57 3.1415"/>
-      <geometry>
-        <mesh filename="package://cobrotic/urdf/l_finger.dae"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <joint name="right_gripper_joint" type="revolute">
-    <axis xyz="1 0 0"/>
-    <limit effort="1000.0" lower="0" upper="0.523599" velocity="1.0"/>
-    <origin rpy="0 0 3.1415" xyz="-0.1 0.08 0.15"/>
-    <parent link="platform"/>
-    <child link="right_gripper"/>
-  </joint>
-
-  <link name="right_tip">
-    <visual>
-      <origin rpy="0 -1.57 3.1415" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://cobrotic/urdf/l_finger_tip.dae"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <joint name="right_tip_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.5"/>
-    <parent link="right_gripper"/>
-    <child link="right_tip"/>
-  </joint> -->
-
-    <!-- Left Gripper -->
+  <!-- Left Gripper -->
   <link name="left_gripper">
     <visual>
-      <origin xyz="-0.1 -0.25 0.15" rpy="0 0 0"/>
+      <origin xyz="-0.1 -0.05 0.15" rpy="0 0 0"/>
       <geometry>
-        <box size="0.09 0.05 0.05"/> <!-- length 0.09, width matches platform thickness, height small -->
+        <box size="0.03 0.1 0.6"/> 
       </geometry>
       <material name="yellow">
-        <ambient>1 1 0 1</ambient>
       </material>
     </visual>
     <collision>
       <geometry>
-        <box size="0.09 0.05 0.05"/>
+        <box size="0.03 0.1 0.6"/>
       </geometry>
     </collision>
   </link>
@@ -240,33 +178,128 @@
     <limit effort="1000" lower="0" upper="0.523599" velocity="1.0"/>
     <parent link="platform"/>
     <child link="left_gripper"/>
-    <origin xyz="-0.1 -0.08 0.15" rpy="0 0 0"/>
+    <origin xyz="-0.1 -0.15 0.15" rpy="0 0 0"/>
+  </joint>
+
+    <!-- Left Tip of Gripper -->
+  <link name="left_tip_gripper">
+    <visual>
+      <origin xyz="0 0 0.12" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.1 0.3"/> 
+      </geometry>
+      <material name="yellow">
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.03 0.1 0.3"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="left_tip_gripper_joint" type="fixed">
+    <axis xyz="1 0 0"/>
+    <parent link="left_gripper"/>
+    <child link="left_tip_gripper"/>
+    <origin xyz="-0.1 -0.05 0.45" rpy="-0.6 0 0"/>
+  </joint>
+
+      <!-- Left point of Tip -->
+  <link name="left_point_tip_gripper">
+    <visual>
+      <origin xyz="0 0.005 0.04" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.1 0.1"/> 
+      </geometry>
+      <material name="yellow">
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.03 0.1 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="left_point_tip_gripper_joint" type="fixed">
+    <axis xyz="1 0 0"/>
+    <parent link="left_tip_gripper"/>
+    <child link="left_point_tip_gripper"/>
+    <origin xyz="0 0 0.25" rpy="0.6 0 0"/>
   </joint>
 
   <!-- Right Gripper -->
   <link name="right_gripper">
     <visual>
-      <origin xyz="-0.1 0.25 0.15" rpy="0 0 0"/>
+      <origin xyz="-0.1 0.05 0.15" rpy="0 0 0"/>
       <geometry>
-        <box size="0.09 0.05 0.05"/>
+        <box size="0.03 0.1 0.6"/>
       </geometry>
       <material name="yellow">
-        <ambient>1 1 0 1</ambient>
       </material>
     </visual>
     <collision>
       <geometry>
-        <box size="0.09 0.05 0.05"/>
+        <box size="0.03 0.1 0.6"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="right_gripper_joint" type="revolute">
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000" lower="0" upper="0.523599" velocity="1.0"/>
+    <parent link="platform"/>
+    <child link="right_gripper"/>
+    <origin xyz="-0.1 0.15 0.15" rpy="0 0 0"/>
+  </joint>
+
+    <!-- Right Tip of Gripper -->
+  <link name="right_tip_gripper">
+    <visual>
+      <origin xyz="0 0 0.12" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.1 0.3"/> 
+      </geometry>
+      <material name="yellow">
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.03 0.1 0.3"/>
       </geometry>
     </collision>
   </link>
 
-  <joint name="right_gripper_joint" type="revolute">
+  <joint name="right_tip_gripper_joint" type="fixed">
     <axis xyz="1 0 0"/>
-    <limit effort="1000" lower="0" upper="0.523599" velocity="1.0"/>
-    <parent link="platform"/>
-    <child link="right_gripper"/>
-    <origin xyz="-0.1 0.08 0.15" rpy="0 0 0"/>
+    <parent link="right_gripper"/>
+    <child link="right_tip_gripper"/>
+    <origin xyz="-0.1 0.05 0.45" rpy="0.6  0 0"/>
+  </joint>
+
+      <!-- Right point of Tip -->
+  <link name="right_point_tip_gripper">
+    <visual>
+      <origin xyz="0 -0.005 0.04" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.1 0.1"/> 
+      </geometry>
+      <material name="yellow">
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.03 0.1 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="right_point_tip_gripper_joint" type="fixed">
+    <axis xyz="1 0 0"/>
+    <parent link="right_tip_gripper"/>
+    <child link="right_point_tip_gripper"/>
+    <origin xyz="0 0 0.25" rpy="-0.6 0 0"/>
   </joint>
 
   <!-- Gazebo ROS2 Control Plugin -->

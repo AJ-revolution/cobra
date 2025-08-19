@@ -25,7 +25,6 @@ resource/cobrotic
 rviz/cobra.rviz
 urdf/bak_cobra.urdf
 urdf/cobra.urdf
-urdf/cobra_arm.urdf
 urdf/meshes/l_finger.dae
 urdf/meshes/l_finger_color.png
 urdf/meshes/l_finger_tip.dae
