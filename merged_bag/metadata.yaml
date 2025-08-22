@@ -2,10 +2,10 @@ rosbag2_bagfile_information:
   version: 5
   storage_identifier: sqlite3
   duration:
-    nanoseconds: 59259699938
+    nanoseconds: 101410523814
   starting_time:
-    nanoseconds_since_epoch: 1755487574698593311
-  message_count: 5678
+    nanoseconds_since_epoch: 1755663509303715721
+  message_count: 9941
   topics_with_message_count:
   - topic_metadata:
       name: /joint_states
@@ -16,7 +16,7 @@ rosbag2_bagfile_information:
         \    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n\
         \    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions:\
         \ false"
-    message_count: 5678
+    message_count: 9941
   compression_format: ''
   compression_mode: ''
   relative_file_paths:
@@ -24,7 +24,7 @@ rosbag2_bagfile_information:
   files:
   - path: merged.db3
     starting_time:
-      nanoseconds_since_epoch: 1755487574698593311
+      nanoseconds_since_epoch: 1755663509303715721
     duration:
-      nanoseconds: 59259699938
-    message_count: 5678
+      nanoseconds: 101410523814
+    message_count: 9941

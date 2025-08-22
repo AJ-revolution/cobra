@@ -8,7 +8,7 @@ controller_manager:
 
 
     hand_controller:
-      type: position_controllers/GripperActionController
+      type: joint_trajectory_controller/JointTrajectoryController
 
 
     joint_state_broadcaster:
@@ -27,4 +27,11 @@ cobra_arm_controller:
       - velocity
 hand_controller:
   ros__parameters:
-    joint: left_gripper_joint
+    joints:
+      - left_gripper_joint
+      - right_gripper_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity

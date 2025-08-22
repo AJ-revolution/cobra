@@ -18,9 +18,6 @@ class JointStateToArduino(Node):
         baudrate = self.get_parameter('baudrate').get_parameter_value().integer_value
         topic = self.get_parameter('topic').get_parameter_value().string_value
 
-        self.last_sent_time = 0
-        self.send_interval = 0.1  # seconds (10 Hz)
-
         # Subscribe to joint states
         self.subscription = self.create_subscription(
             JointState,
@@ -42,17 +39,12 @@ class JointStateToArduino(Node):
             self.get_logger().warn("Arduino not connected. Skipping message.")
             return
 
-        current_time = time.time()
-        if current_time - self.last_sent_time < self.send_interval:
-            return  # Skip sending
-        self.last_sent_time = current_time
-
         try:
             # Convert radians to degrees
             degrees = [int(angle * 180.0 / 3.14159) for angle in msg.position]
-            self.declare_parameter('calibration_ratios', [210/180, 65/55, 155/127])
-            ratios = self.get_parameter('calibration_ratios').get_parameter_value().double_array_value
-            degrees = [int(deg * ratio) for deg, ratio in zip(degrees, ratios)]
+            degrees[0] = degrees[0] * 210/180
+            degrees[1] = degrees[1] * 65/55
+            degrees[2] = degrees[2] * 155/127
             data_str = ','.join(map(str, degrees)) + '\n'
 
             # Send to Arduino

@@ -23,7 +23,6 @@ launch/gazebo.launch.py
 launch/initiate.launch.py
 resource/cobrotic
 rviz/cobra.rviz
-urdf/bak_cobra.urdf
 urdf/cobra.urdf
 urdf/meshes/l_finger.dae
 urdf/meshes/l_finger_color.png

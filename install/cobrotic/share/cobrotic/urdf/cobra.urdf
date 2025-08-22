@@ -3,7 +3,7 @@
 
   <!-- Mateirals -->
   <material name="blue">
-    <color rgba="0 0 0.8 1"/>
+    <color rgba="0 0.5 0.5 1"/>
   </material>
 
   <material name="yellow">
@@ -90,7 +90,7 @@
   <joint name="pedestal_to_arm" type="revolute">
   
     <axis xyz="0 1 0"/>
-    <limit effort="1000.0" lower="0" upper="2.18166157" velocity="1.0"/>  
+    <limit effort="1000.0" lower="0.0" upper="2.18166157" velocity="1.0"/>  
     <parent link="pedestal"/>
     <child link="arm"/>
     <origin rpy="0 -1.13446401 0" xyz="0 0 0.4"/>
@@ -121,7 +121,7 @@
 
   <joint name="arm_to_forearm" type="revolute">
     <axis xyz="0 -1 0"/>
-    <limit effort="1000.0" lower="0" upper="2.70526034" velocity="1.0"/>
+    <limit effort="1000.0" lower="0.0" upper="2.70526034" velocity="1.0"/>
     <parent link="arm"/>
     <child link="forearm"/>
     <origin rpy="0 2.70526034 0" xyz="0 0 1.2"/>
@@ -168,14 +168,19 @@
     </visual>
     <collision>
       <geometry>
-        <box size="0.03 0.1 0.6"/>
+        <box size="0.03 0.1 0.3"/>
       </geometry>
     </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
   </link>
 
   <joint name="left_gripper_joint" type="revolute">
     <axis xyz="1 0 0"/>
-    <limit effort="1000" lower="0" upper="0.523599" velocity="1.0"/>
+    <limit effort="1000" lower="0.0" upper="0.523599" velocity="1.0"/>
     <parent link="platform"/>
     <child link="left_gripper"/>
     <origin xyz="-0.1 -0.15 0.15" rpy="0 0 0"/>
@@ -196,6 +201,11 @@
         <box size="0.03 0.1 0.3"/>
       </geometry>
     </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
   </link>
 
   <joint name="left_tip_gripper_joint" type="fixed">
@@ -220,6 +230,11 @@
         <box size="0.03 0.1 0.1"/>
       </geometry>
     </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
   </link>
 
   <joint name="left_point_tip_gripper_joint" type="fixed">
@@ -241,14 +256,19 @@
     </visual>
     <collision>
       <geometry>
-        <box size="0.03 0.1 0.6"/>
+        <box size="0.03 0.1 0.3"/>
       </geometry>
     </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
   </link>
   
   <joint name="right_gripper_joint" type="revolute">
     <axis xyz="-1 0 0"/>
-    <limit effort="1000" lower="0" upper="0.523599" velocity="1.0"/>
+    <limit effort="1000" lower="0.0" upper="0.523599" velocity="1.0"/>
     <parent link="platform"/>
     <child link="right_gripper"/>
     <origin xyz="-0.1 0.15 0.15" rpy="0 0 0"/>
@@ -269,6 +289,11 @@
         <box size="0.03 0.1 0.3"/>
       </geometry>
     </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
   </link>
 
   <joint name="right_tip_gripper_joint" type="fixed">
@@ -293,6 +318,11 @@
         <box size="0.03 0.1 0.1"/>
       </geometry>
     </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
   </link>
 
   <joint name="right_point_tip_gripper_joint" type="fixed">

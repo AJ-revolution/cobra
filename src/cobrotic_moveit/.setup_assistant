@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: cobrotic
+    relative_path: urdf/cobra.urdf
+  srdf:
+    relative_path: config/cobra.srdf
+  package_settings:
+    author_name: AJ
+    author_email: kuanchiehhuang0116@gmail.com
+    generated_timestamp: 1755654881
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

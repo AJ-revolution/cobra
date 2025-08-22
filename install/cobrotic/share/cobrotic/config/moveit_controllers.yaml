@@ -16,9 +16,9 @@ moveit_simple_controller_manager:
     action_ns: follow_joint_trajectory
     default: true
   hand_controller:
-    type: GripperCommand
+    type: FollowJointTrajectory
     joints:
       - left_gripper_joint
       - right_gripper_joint
-    action_ns: gripper_cmd
+    action_ns: follow_joint_trajectory
     default: true

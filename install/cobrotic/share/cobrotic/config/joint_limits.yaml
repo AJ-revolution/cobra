@@ -10,26 +10,26 @@ default_acceleration_scaling_factor: 0.1
 joint_limits:
   arm_to_forearm:
     has_velocity_limits: true
-    max_velocity: 0.5
+    max_velocity: 1.0
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 0.0
   bottom_to_pedestal:
     has_velocity_limits: true
-    max_velocity: 0.5
+    max_velocity: 1.0
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 0.0
   left_gripper_joint:
     has_velocity_limits: true
-    max_velocity: 0.5
+    max_velocity: 1.0
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 0.0
   pedestal_to_arm:
     has_velocity_limits: true
-    max_velocity: 0.5
+    max_velocity: 1.0
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 0.0
   right_gripper_joint:
     has_velocity_limits: true
-    max_velocity: 0.5
+    max_velocity: 1.0
     has_acceleration_limits: false
-    max_acceleration: 0
+    max_acceleration: 0.0

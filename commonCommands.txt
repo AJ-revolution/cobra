@@ -1,0 +1,4 @@
+ ros2 bag record -o myRecord/move1 /joint_states /cobra_arm_controller/joint_trajectory
+ ros2 bag play merged_bag
+ python3 src/cobrotic/cobrotic_nodes/replay_bag_trajectory.py 
+ ros2 launch gazebo_ros gazebo.launch.py

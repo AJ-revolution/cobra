@@ -1,4 +1,0 @@
-source;share/cobra_moveit_config/local_setup.bash
-source;share/cobra_moveit_config/local_setup.dsv
-source;share/cobra_moveit_config/local_setup.sh
-source;share/cobra_moveit_config/local_setup.zsh
