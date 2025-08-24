@@ -1,8 +1,0 @@
-# Default initial positions for cobra's ros2_control fake system
-
-initial_positions:
-  arm_to_forearm: 0
-  bottom_to_pedestal: 0
-  left_gripper_joint: 0
-  pedestal_to_arm: 0
-  right_gripper_joint: 0

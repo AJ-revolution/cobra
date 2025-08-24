@@ -16,12 +16,7 @@
 /home/aj/ros2_ws/install/cobrotic/share/cobrotic/urdf/l_finger_tip.dae
 /home/aj/ros2_ws/install/cobrotic/share/cobrotic/urdf/l_finger_color.png
 /home/aj/ros2_ws/install/cobrotic/share/cobrotic/urdf/l_finger_tip_color.png
-/home/aj/ros2_ws/install/cobrotic/share/cobrotic/config/joint_limits.yaml
-/home/aj/ros2_ws/install/cobrotic/share/cobrotic/config/kinematics.yaml
-/home/aj/ros2_ws/install/cobrotic/share/cobrotic/config/ros2_controllers.yaml
-/home/aj/ros2_ws/install/cobrotic/share/cobrotic/config/initial_positions.yaml
-/home/aj/ros2_ws/install/cobrotic/share/cobrotic/config/moveit_controllers.yaml
-/home/aj/ros2_ws/install/cobrotic/share/cobrotic/config/pilz_cartesian_limits.yaml
+/home/aj/ros2_ws/install/cobrotic/share/cobrotic/config
 /home/aj/ros2_ws/install/cobrotic/share/cobrotic/rviz/cobra.rviz
 /home/aj/ros2_ws/install/cobrotic/lib/python3.10/site-packages/cobrotic-0.0.0-py3.10.egg-info/SOURCES.txt
 /home/aj/ros2_ws/install/cobrotic/lib/python3.10/site-packages/cobrotic-0.0.0-py3.10.egg-info/top_level.txt
